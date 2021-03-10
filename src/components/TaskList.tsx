@@ -65,7 +65,10 @@ export function TaskList() {
     // Remova uma task da listagem pelo ID
     // Filtrar a task
     // Excluir a Task
- }
+    const filterOfTaks = tasks.filter(task => task.id !== id);// Filtrando as Tasks
+
+    setTasks(filterOfTaks);// Setando novamente o setTasks para excluir
+  }
 
   return (
     <section className="task-list container">
