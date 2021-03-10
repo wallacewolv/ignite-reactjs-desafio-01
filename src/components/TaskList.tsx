@@ -20,19 +20,25 @@ export function TaskList() {
 
   function handleCreateNewTask() {
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
+    // Definir as tasks como um oldState
+    // Gerar um id aleatótio
+    // Criar uma newTask
+    // Input diferente de preenchido colocar um alert
+    // Setar o valor do input
+
     let oldState = tasks;
-    let idRandom = (Math.random() * (100 - 0) + 100);
+    let idRandom = (Math.random() * (100 - 0) + 100);// Gerar um id de 0 a 100
 
     const newTask = {
       id: idRandom,
       title: newTaskTitle,
       isComplete: false,
-    }
+    }//Setando um novo task
 
     if (!newTaskTitle) {
-      return (alert("Insira um texto no campo"));
+      return (alert("Insira um texto no campo"));// Bloqueando criar uma task vazia
     } else if (newTaskTitle) {
-      setTasks([...oldState, newTask]);
+      setTasks([...oldState, newTask]); // Basicamante não usa o estado antigo
     }
 
     setNewTaskTitle(''); // resetar o input
@@ -47,7 +53,7 @@ export function TaskList() {
 
   function handleRemoveTask(id: number) {
     // Remova uma task da listagem pelo ID
-  }
+}
 
   return (
     <section className="task-list container">
